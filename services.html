@@ -5,120 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Green Travel</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: var(--primary-light);
-        }
-
-        header {
-            background-color: var(--primary-green);
-            padding: 15px 0;
-        }
-
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        header nav ul li a.active {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        main h1 {
+        .services-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1682687220067-469c053495b1') center/cover;
+            padding: 60px 20px;
             text-align: center;
-            color: var(--primary-green);
+            color: white;
+        }
+
+        .services-hero h1 {
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        section {
-            margin-bottom: 40px;
+        .services-hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        section h2 {
-            color: #0044cc;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #0044cc;
-            display: inline-block;
-        }
-
-        .offer-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .offers-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .offer {
-            background-color: var(--primary-light);
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer:hover {
+            transform: translateY(-5px);
+        }
+
+        .offer-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .offer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .offer:hover .offer-image img {
+            transform: scale(1.05);
+        }
+
+        .offer-content {
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
-        .offer img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .offer h3 {
+        .offer-title {
+            font-size: 1.5em;
             color: var(--primary-green);
             margin-bottom: 10px;
         }
 
-        .offer p {
-            margin-bottom: 15px;
+        .eco-rating {
+            color: var(--primary-green);
+            margin-bottom: 10px;
         }
 
-        .offer button {
-            padding: 10px 20px;
-            border: none;
+        .eco-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .eco-badge {
+            background-color: var(--primary-light);
+            color: var(--primary-green);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .details-button {
             background-color: var(--primary-green);
-            color: #fff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-        .offer button:hover {
+        .details-button:hover {
             background-color: var(--hover-green);
         }
 
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: var(--primary-green);
-            color: #fff;
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
         }
 
-        footer p {
-            margin: 0;
+        @media (max-width: 768px) {
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .filters-section {
+            background: var(--primary-light);
+            padding: 30px 20px;
+            margin-bottom: 40px;
+        }
+
+        .filters-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .filter-group select, 
+        .filter-group input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .filter-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .apply-filters {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .reset-filters {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .filter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .sort-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+
+        .sort-tag {
+            padding: 8px 15px;
+            background: white;
+            border: 1px solid var(--primary-green);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sort-tag.active {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .sort-tag:hover {
+            background: var(--primary-light);
         }
     </style>
 </head>
@@ -127,40 +222,123 @@
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.php" class="active">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="about.html">À propos</a></li>
+                <li><a href="equipe.html">Notre Équipe</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Nos Services</h1>
-        <p>Découvrez nos solutions pour un voyage durable et mémorable :</p>
+    <section class="services-hero">
+        <h1>Nos Destinations Éco-responsables</h1>
+        <p>Découvrez nos destinations soigneusement sélectionnées pour leur engagement environnemental et leur authenticité.</p>
+    </section>
 
-        <section class="offer-list">
-            <div class="offer">
-                <img src="img/eco-lodge.jpg" alt="Ecolodge">
-                <h3>Ecolodge en Amazonie</h3>
-                <p>À partir de 120€ par nuit</p>
-                <button>Voir les détails</button>
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label for="country">Pays</label>
+                <select id="country">
+                    <option value="all">Tous les pays</option>
+                    <option value="costa-rica">Costa Rica</option>
+                    <option value="islande">Islande</option>
+                    <option value="japon">Japon</option>
+                    <option value="norvege">Norvège</option>
+                    <option value="indonesie">Indonésie</option>
+                    <option value="nouvelle-zelande">Nouvelle-Zélande</option>
+                    <option value="thailande">Thaïlande</option>
+                    <option value="suisse">Suisse</option>
+                    <option value="maldives">Maldives</option>
+                    <option value="perou">Pérou</option>
+                    <option value="canada">Canada</option>
+                    <option value="grece">Grèce</option>
+                    <option value="vietnam">Vietnam</option>
+                    <option value="maroc">Maroc</option>
+                    <option value="tanzanie">Tanzanie</option>
+                </select>
             </div>
 
-            <div class="offer">
-                <img src="img/mountain-cabin.jpg" alt="Cabane en montagne">
-                <h3>Cabane en Montagne</h3>
-                <p>À partir de 90€ par nuit</p>
-                <button>Voir les détails</button>
+            <div class="filter-group">
+                <label for="destination-type">Type de destination</label>
+                <select id="destination-type">
+                    <option value="all">Toutes les destinations</option>
+                    <option value="nature">Nature & Aventure</option>
+                    <option value="culture">Culture & Tradition</option>
+                    <option value="wellbeing">Bien-être & Détente</option>
+                    <option value="eco">100% Écologique</option>
+                </select>
             </div>
 
-            <div class="offer">
-                <img src="img/beach-house.jpg" alt="Maison de plage">
-                <h3>Maison de Plage</h3>
-                <p>À partir de 150€ par nuit</p>
-                <button>Voir les détails</button>
+            <div class="filter-group">
+                <label for="price-range">Budget maximum par nuit</label>
+                <input type="number" id="price-range" min="0" max="1000" step="50" value="300">
             </div>
-        </section>
-    </main>
+
+            <div class="filter-group">
+                <label for="duration">Durée du séjour</label>
+                <select id="duration">
+                    <option value="all">Toutes durées</option>
+                    <option value="short">Court séjour (1-3 jours)</option>
+                    <option value="medium">Moyen séjour (4-7 jours)</option>
+                    <option value="long">Long séjour (8+ jours)</option>
+                </select>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-button apply-filters">Appliquer les filtres</button>
+                <button class="filter-button reset-filters">Réinitialiser</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="sort-tags">
+        <span class="sort-tag active">Tous</span>
+        <span class="sort-tag">Prix croissant</span>
+        <span class="sort-tag">Prix décroissant</span>
+        <span class="sort-tag">Mieux notés</span>
+        <span class="sort-tag">Plus populaires</span>
+    </div>
+
+    <div class="offers-container">
+        <div class="offers-grid">
+            <div class="offer">
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e" alt="Costa Rica - Éco-lodge dans la forêt tropicale">
+                </div>
+                <div class="offer-content">
+                    <h2 class="offer-title">Costa Rica - Éco-lodge dans la forêt tropicale</h2>
+                    <div class="eco-rating">
+                        <i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="eco-badges">
+                        <span class="eco-badge">Éco-responsable</span>
+                        <span class="eco-badge">Biodiversité</span>
+                    </div>
+                    <p class="price">À partir de 150,00€ par nuit</p>
+                    <button class="details-button">Voir les détails</button>
+                </div>
+            </div>
+            <div class="offer">
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1551373884-8a0750074df7" alt="Islande - Aurores boréales & Énergies renouvelables">
+                </div>
+                <div class="offer-content">
+                    <h2 class="offer-title">Islande - Aurores boréales & Énergies renouvelables</h2>
+                    <div class="eco-rating">
+                        <i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="eco-badges">
+                        <span class="eco-badge">Énergie verte</span>
+                        <span class="eco-badge">Nature</span>
+                    </div>
+                    <p class="price">À partir de 200,00€ par nuit</p>
+                    <button class="details-button">Voir les détails</button>
+                </div>
+            </div>
+            <!-- Répétez les autres offres similaires -->
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Green Travel. Tous droits réservés.</p>
