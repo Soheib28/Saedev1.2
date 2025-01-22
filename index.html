@@ -415,13 +415,32 @@
                 gap: 15px;
             }
         }
+
+        /* Styles pour le logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50; /* Couleur verte */
+        }
+
+        .logo img {
+            width: 50px; /* Ajustez la taille selon vos besoins */
+            height: auto;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="path/to/your/logo.png" alt="Green Travel Logo">
+            GreenTravel
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="services.php">Services</a></li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="equipe.html">Notre Équipe</a></li>
