@@ -1,0 +1,98 @@
+.offer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.offer {
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid var(--primary-blue);
+}
+
+.offer img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.offer h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.offer button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.offer button:hover {
+    background-color: var(--hover-blue);
+}
+
+/* Nouvelles variables de couleurs */
+:root {
+    --primary-blue: #0044cc;
+    --primary-light: #e3f2fd;
+    --primary-dark: #0033a0;
+    --accent-blue: #4d79ff;
+    --hover-blue: #003399;
+}
+
+/* Nouveaux styles pour renforcer l'identité bleue */
+.eco-badge {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.filters {
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.filter-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: var(--hover-blue);
+}
+
+select {
+    border: 2px solid var(--primary-blue);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Style pour les icônes de notation */
+.eco-rating i {
+    color: var(--primary-blue);
+    margin-right: 2px;
+}
+
+/* Style pour la section des caractéristiques */
+.eco-features {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+}

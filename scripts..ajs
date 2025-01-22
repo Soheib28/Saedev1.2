@@ -1,0 +1,50 @@
+// Navigation dynamique : ajoute une classe active au lien du menu en cours
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+
+// Validation du formulaire de contact
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.querySelector("#name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const message = document.querySelector("#message").value.trim();
+
+    if (!name || !email || !message) {
+        alert("Tous les champs sont obligatoires !");
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert("Veuillez entrer une adresse email valide.");
+        return;
+    }
+
+    alert("Votre message a été envoyé avec succès !");
+    this.reset();
+});
+
+// Fonction de validation d'email
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// Animation au survol des sections
+const features = document.querySelectorAll(".feature");
+features.forEach(feature => {
+    feature.addEventListener("mouseover", () => {
+        feature.style.transform = "scale(1.05)";
+    });
+
+    feature.addEventListener("mouseout", () => {
+        feature.style.transform = "scale(1)";
+    });
+});

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Green Travel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: var(--primary-light);
+        }
+
+        header {
+            background-color: var(--primary-green);
+            padding: 15px 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        header nav ul li a.active {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main h1 {
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            color: #0044cc;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #0044cc;
+            display: inline-block;
+        }
+
+        .offer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .offer {
+            background-color: var(--primary-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .offer img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .offer h3 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .offer p {
+            margin-bottom: 15px;
+        }
+
+        .offer button {
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--primary-green);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .offer button:hover {
+            background-color: var(--hover-green);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: var(--primary-green);
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.php" class="active">Services</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nos Services</h1>
+        <p>Découvrez nos solutions pour un voyage durable et mémorable :</p>
+
+        <section class="offer-list">
+            <div class="offer">
+                <img src="img/eco-lodge.jpg" alt="Ecolodge">
+                <h3>Ecolodge en Amazonie</h3>
+                <p>À partir de 120€ par nuit</p>
+                <button>Voir les détails</button>
+            </div>
+
+            <div class="offer">
+                <img src="img/mountain-cabin.jpg" alt="Cabane en montagne">
+                <h3>Cabane en Montagne</h3>
+                <p>À partir de 90€ par nuit</p>
+                <button>Voir les détails</button>
+            </div>
+
+            <div class="offer">
+                <img src="img/beach-house.jpg" alt="Maison de plage">
+                <h3>Maison de Plage</h3>
+                <p>À partir de 150€ par nuit</p>
+                <button>Voir les détails</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Green Travel. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
